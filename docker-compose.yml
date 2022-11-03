@@ -3,31 +3,31 @@ networks:
   basic:
 services:
   front:
-#    build:
-#      context: ./
-#      dockerfile: ./docker/front/Dockerfile
+    build:
+      context: ./
+      dockerfile: ./docker/front/Dockerfile
     container_name: greaterwms_front
-    image: greaterwms/greaterwms_front:latest
+#    image: greaterwms/greaterwms_front:latest
     restart: always
     ports:
       - '8080:8080'
     volumes:
       - ./templates:/GreaterWMS/templates:rw
-      - ./web_start.sh:/GreaterWMS/templates/webstart.sh
+#      - ./templates/web_start.sh:/GreaterWMS/templates/web_start.sh
     command:
       - /bin/bash
       - -c
       #- "yarn install --force"
       - |
-        bash /GreaterWMS/templates/webstart.sh
+        bash /GreaterWMS/templates/web_start.sh
     networks:
       - basic
   backend:
-#    build:
-#      context: ./
-#      dockerfile: ./docker/backend/Dockerfile 
+    build:
+      context: ./
+      dockerfile: ./docker/backend/Dockerfile
     container_name: greaterwms_backend
-    image: greaterwms/greaterwms_backend:latest
+#    image: greaterwms/greaterwms_backend:latest
     restart: always
     volumes:
       - ./:/GreaterWMS/:rw #将前目录挂载到容器下

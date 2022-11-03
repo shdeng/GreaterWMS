@@ -8,3 +8,6 @@ db.sqlite3
 delete.py
 *.xlsx
 logs/
+/venv/
+*/migrations/*
+/greaterwms_server_access.log

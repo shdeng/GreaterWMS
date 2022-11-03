@@ -13,6 +13,7 @@ RUN apt-get install supervisor -y
 RUN python3 -m pip install --upgrade pip
 #Install supervisor
 RUN pip3 install supervisor
+RUN pip3 install daphne
 RUN pip3 install -U 'Twisted[tls,http2]'
 RUN pip3 install -r requirements.txt
 EXPOSE 8008
