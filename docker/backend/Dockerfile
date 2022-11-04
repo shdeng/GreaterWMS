@@ -7,6 +7,8 @@ WORKDIR /GreaterWMS
 #Installation foundation dependency
 #RUN sed -i s/deb.debian.org/mirrors.163.com/g /etc/apt/sources.list
 #RUN apt-get clean
+RUN sed -i s@/archive.ubuntu.com/@/mirrors.aliyun.com/@g /etc/apt/sources.list
+RUN apt-get clean
 RUN apt-get update --fix-missing && apt-get upgrade -y
 RUN apt-get install build-essential -y
 RUN apt-get install supervisor -y
