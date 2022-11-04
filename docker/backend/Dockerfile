@@ -10,6 +10,7 @@ WORKDIR /GreaterWMS
 RUN apt-get update --fix-missing && apt-get upgrade -y
 RUN apt-get install build-essential -y
 RUN apt-get install supervisor -y
+RUN pip config set global.index-url http://pypi.douban.com/simple/
 RUN python3 -m pip install --upgrade pip
 #Install supervisor
 RUN pip3 install supervisor
